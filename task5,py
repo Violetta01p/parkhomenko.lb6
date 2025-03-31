@@ -1,0 +1,55 @@
+def escape_game():
+   try:
+       wood = int(input("Enter the amount of wood for building a raft (from 1 to 10): "))
+
+
+       if wood < 3:
+           print("Not enough wood, the raft sank!")
+           return  
+
+
+   except ValueError:
+       print("That's not a number!")
+       return  
+
+
+   try:
+       
+       escape_choice = input("Choose: 'run', 'hide', 'fight': ").lower()
+
+
+       if escape_choice not in ['run', 'hide', 'fight']:
+           raise ValueError("This option doesn't exist, pirates caught you!")
+
+
+   except ValueError as e:
+       print(e)
+       return  
+
+
+   try:
+       
+       secret_code = random.randint(10, 99)  
+       code = int(input("Enter the secret code (two-digit number): "))
+
+
+       if code != secret_code:
+           print("Wrong code, the chest exploded! Game over.")
+           return  
+
+
+       print("The treasure is yours, you're saved!")
+
+
+   except ValueError:
+       print("That's not a number!")
+       return  
+
+
+   finally:
+       print("Game over. Thank you for participating in the adventure!")
+
+
+
+
+escape_game()
